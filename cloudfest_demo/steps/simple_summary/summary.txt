@@ -1,0 +1,31 @@
+**Summary:**
+
+This PR introduces new functionalities to the project, including:
+
+*   A new `experimental.py` file with functions for breadth-first search and converting Arabic numbers to Roman numerals.
+*   A `power` function in `main.py` to calculate the power of a base to an exponent.
+*   A `combine_values` function in `math_utils.py` to combine optional integer values.
+*   A `modify_string` function in `string_utils.py` that concatenates the input string to itself n times, where n is the length of the string.
+*   Adds linting and testing configuration via `Makefile` and `requirements.txt`.
+*   Type hints and docstrings are added to functions for improved readability and maintainability.
+
+**Highlights:**
+
+*   Adds breadth-first search and Arabic to Roman numeral conversion.
+*   Improves code quality with linting and testing setup.
+*   Enhances existing modules with new utility functions and type hints.
+
+<details>
+<summary>Changelog</summary>
+
+*   **Makefile:** Added a `Makefile` with `test` and `lint` targets using `pytest` and `flake8`.
+*   **experimental.py:** Created a new file `experimental.py` with the following functions:
+    *   `check_value`: Checks if an optional integer is not None and greater than 10.
+    *   `run_breadth_first_search`: Implements breadth-first search on a graph represented as a dictionary.
+    *   `arabic_to_romanian`: Converts an Arabic number to its Romanian numeral representation.
+*   **main.py:** Added a `power` function to calculate the power of a base to an exponent.
+*   **math_utils.py:** Added a `combine_values` function to combine two optional integers, returning their sum if both are present, or the non-None value if only one is present.
+*   **requirements.txt:** Added `pytest` and `flake8` as dependencies.
+*   **string_utils.py:** Added a `modify_string` function that concatenates the input string to itself n times, where n is the length of the string.
+*   **tracker:** Added `version 2` to the tracker file.
+</details>
