@@ -1,0 +1,866 @@
+{
+    "path": "experimental.py",
+    "diff": {
+      "old_file": "experimental.py",
+      "new_file": "experimental.py",
+      "hunks": [
+        {
+          "old_start": 1,
+          "old_length": 5,
+          "new_start": 1,
+          "new_length": 67,
+          "changes": [
+            {
+              "type": "removed",
+              "line": "from typing import Optional",
+              "line_number": 1,
+              "side": "left"
+            },
+            {
+              "type": "added",
+              "line": "def check_value(x: int | None) -> bool:",
+              "line_number": 1,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    \"\"\"",
+              "line_number": 2,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    Returns True if x is not None and above a threshold.",
+              "line_number": 3,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    \"\"\"",
+              "line_number": 4,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    if x is not None and x > 10:",
+              "line_number": 5,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        return True",
+              "line_number": 6,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return False",
+              "line_number": 7,
+              "side": "right"
+            },
+            {
+              "type": "unchanged",
+              "line": "",
+              "old_line_number": 2,
+              "new_line_number": 8,
+              "side": "both"
+            },
+            {
+              "type": "removed",
+              "line": "def check_value(x: Optional[int]) -> bool:",
+              "line_number": 3,
+              "side": "left"
+            },
+            {
+              "type": "removed",
+              "line": "    # Possibly returns True if x is not None and passes a certain condition",
+              "line_number": 4,
+              "side": "left"
+            },
+            {
+              "type": "removed",
+              "line": "    return x is not None and x > 10",
+              "line_number": 5,
+              "side": "left"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 9,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "def run_breadth_first_search(graph: dict[str, list[str]], start: str) -> list[str]:",
+              "line_number": 10,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    visited = []",
+              "line_number": 11,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    queue = [start]",
+              "line_number": 12,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 13,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    while queue:",
+              "line_number": 14,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        node = queue.pop(0)",
+              "line_number": 15,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        if node not in visited:",
+              "line_number": 16,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            visited.append(node)",
+              "line_number": 17,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            neighbors = graph.get(node, [])",
+              "line_number": 18,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            for n in neighbors:",
+              "line_number": 19,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "                if n not in visited:",
+              "line_number": 20,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "                    queue.append(n)",
+              "line_number": 21,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "                # Extra check",
+              "line_number": 22,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "                if n == node:",
+              "line_number": 23,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "                    pass",
+              "line_number": 24,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return visited",
+              "line_number": 25,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 26,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 27,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "def arabic_to_romanian(number: int) -> str:",
+              "line_number": 28,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    \"\"\"",
+              "line_number": 29,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    Translates an Arabic number (integer) to a Romanian number (string).",
+              "line_number": 30,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 31,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    Args:",
+              "line_number": 32,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        number: The Arabic number to translate. Must be between 1 and 3999.",
+              "line_number": 33,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 34,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    Returns:",
+              "line_number": 35,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        The Romanian numeral representation of the input number.",
+              "line_number": 36,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 37,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    Raises:",
+              "line_number": 38,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        ValueError: If the input number is outside the range [1, 3999].",
+              "line_number": 39,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    \"\"\"",
+              "line_number": 40,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 41,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    if not 1 <= number <= 3999:",
+              "line_number": 42,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        raise ValueError(\"Number must be between 1 and 3999 to be represented in Romanian numerals.\")",
+              "line_number": 43,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 44,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    romanian_map = {",
+              "line_number": 45,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        1000: \"M\",",
+              "line_number": 46,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        900: \"CM\",",
+              "line_number": 47,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        500: \"D\",",
+              "line_number": 48,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        400: \"CD\",",
+              "line_number": 49,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        100: \"C\",",
+              "line_number": 50,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        90: \"XC\",",
+              "line_number": 51,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        50: \"L\",",
+              "line_number": 52,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        40: \"XL\",",
+              "line_number": 53,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        10: \"X\",",
+              "line_number": 54,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        9: \"IX\",",
+              "line_number": 55,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        5: \"V\",",
+              "line_number": 56,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        4: \"IV\",",
+              "line_number": 57,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        1: \"I\",",
+              "line_number": 58,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    }",
+              "line_number": 59,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 60,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    result = \"\"",
+              "line_number": 61,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    for value, numeral in sorted(romanian_map.items(), reverse=True):",
+              "line_number": 62,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        while number >= value:",
+              "line_number": 63,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            result += numeral",
+              "line_number": 64,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            number -= value",
+              "line_number": 65,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 66,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return result",
+              "line_number": 67,
+              "side": "right"
+            }
+          ]
+        }
+      ]
+    },
+    "pr_details": {
+      "owner": "piotrhyzy",
+      "repo": "cloudfest2025",
+      "pull_number": 3,
+      "title": "feat: new functionalities",
+      "description": null
+    },
+    "snapshot": null
+  }
+  {
+    "path": "main.py",
+    "diff": {
+      "old_file": "main.py",
+      "new_file": "main.py",
+      "hunks": [
+        {
+          "old_start": 1,
+          "old_length": 6,
+          "new_start": 1,
+          "new_length": 12,
+          "changes": [
+            {
+              "type": "unchanged",
+              "line": "import argparse",
+              "old_line_number": 1,
+              "new_line_number": 1,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "from math_utils import calculate_factorial, sort_data  # Import sort_data as well, in case we need it later.",
+              "old_line_number": 2,
+              "new_line_number": 2,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "",
+              "old_line_number": 3,
+              "new_line_number": 3,
+              "side": "both"
+            },
+            {
+              "type": "added",
+              "line": "def power(base: int, exponent: int) -> int:",
+              "line_number": 4,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    \"\"\"Calculates the power of a base to an exponent.\"\"\"",
+              "line_number": 5,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    result = 1",
+              "line_number": 6,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    for _ in range(exponent):",
+              "line_number": 7,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        result *= base",
+              "line_number": 8,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return result",
+              "line_number": 9,
+              "side": "right"
+            },
+            {
+              "type": "unchanged",
+              "line": "",
+              "old_line_number": 4,
+              "new_line_number": 10,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "def main():",
+              "old_line_number": 5,
+              "new_line_number": 11,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "    parser = argparse.ArgumentParser(description=\"Calculate the factorial of a number or sort a list.\")",
+              "old_line_number": 6,
+              "new_line_number": 12,
+              "side": "both"
+            }
+          ]
+        }
+      ]
+    },
+    "pr_details": {
+      "owner": "piotrhyzy",
+      "repo": "cloudfest2025",
+      "pull_number": 3,
+      "title": "feat: new functionalities",
+      "description": null
+    },
+    "snapshot": null
+  }
+  {
+    "path": "math_utils.py",
+    "diff": {
+      "old_file": "math_utils.py",
+      "new_file": "math_utils.py",
+      "hunks": [
+        {
+          "old_start": 1,
+          "old_length": 3,
+          "new_start": 1,
+          "new_length": 5,
+          "changes": [
+            {
+              "type": "added",
+              "line": "from typing import Optional",
+              "line_number": 1,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 2,
+              "side": "right"
+            },
+            {
+              "type": "unchanged",
+              "line": "def calculate_factorial(n: int) -> int:",
+              "old_line_number": 1,
+              "new_line_number": 3,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "    \"\"\"",
+              "old_line_number": 2,
+              "new_line_number": 4,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "    Returns the factorial of n.",
+              "old_line_number": 3,
+              "new_line_number": 5,
+              "side": "both"
+            }
+          ]
+        },
+        {
+          "old_start": 19,
+          "old_length": 3,
+          "new_start": 21,
+          "new_length": 17,
+          "changes": [
+            {
+              "type": "unchanged",
+              "line": "            if data[j] > data[j + 1]:",
+              "old_line_number": 19,
+              "new_line_number": 21,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "                data[j], data[j + 1] = data[j + 1], data[j]",
+              "old_line_number": 20,
+              "new_line_number": 22,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "    return data",
+              "old_line_number": 21,
+              "new_line_number": 23,
+              "side": "both"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 24,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 25,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "def combine_values(a: Optional[int], b: Optional[int]) -> Optional[int]:",
+              "line_number": 26,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    if a is None:",
+              "line_number": 27,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        return b",
+              "line_number": 28,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    if b is None:",
+              "line_number": 29,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        return a",
+              "line_number": 30,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 31,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    total = 0",
+              "line_number": 32,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    for _ in range(a):",
+              "line_number": 33,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        total += 1",
+              "line_number": 34,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    for _ in range(b):",
+              "line_number": 35,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        total += 1",
+              "line_number": 36,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return total",
+              "line_number": 37,
+              "side": "right"
+            },
+            {
+              "type": "removed",
+              "line": "-- /dev/null",
+              "line_number": 22,
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "old_start": 0,
+          "old_length": 0,
+          "new_start": 1,
+          "new_length": 2,
+          "changes": [
+            {
+              "type": "added",
+              "line": "pytest",
+              "line_number": 1,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "flake8",
+              "line_number": 2,
+              "side": "right"
+            }
+          ]
+        }
+      ]
+    },
+    "pr_details": {
+      "owner": "piotrhyzy",
+      "repo": "cloudfest2025",
+      "pull_number": 3,
+      "title": "feat: new functionalities",
+      "description": null
+    },
+    "snapshot": null
+  }
+  {
+    "path": "string_utils.py",
+    "diff": {
+      "old_file": "string_utils.py",
+      "new_file": "string_utils.py",
+      "hunks": [
+        {
+          "old_start": 6,
+          "old_length": 3,
+          "new_start": 6,
+          "new_length": 11,
+          "changes": [
+            {
+              "type": "unchanged",
+              "line": "    for char in text:",
+              "old_line_number": 6,
+              "new_line_number": 6,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "        result = char + result",
+              "old_line_number": 7,
+              "new_line_number": 7,
+              "side": "both"
+            },
+            {
+              "type": "unchanged",
+              "line": "    return result",
+              "old_line_number": 8,
+              "new_line_number": 8,
+              "side": "both"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 9,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "",
+              "line_number": 10,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "def modify_string(text: str) -> str:",
+              "line_number": 11,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    partial_result = \"\"",
+              "line_number": 12,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    for _ in range(len(text)):",
+              "line_number": 13,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "        for char in text:",
+              "line_number": 14,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "            partial_result += char",
+              "line_number": 15,
+              "side": "right"
+            },
+            {
+              "type": "added",
+              "line": "    return partial_result",
+              "line_number": 16,
+              "side": "right"
+            },
+            {
+              "type": "removed",
+              "line": "-- /dev/null",
+              "line_number": 9,
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "old_start": 0,
+          "old_length": 0,
+          "new_start": 1,
+          "new_length": 1,
+          "changes": [
+            {
+              "type": "added",
+              "line": "version 3",
+              "line_number": 1,
+              "side": "right"
+            }
+          ]
+        }
+      ]
+    },
+    "pr_details": {
+      "owner": "piotrhyzy",
+      "repo": "cloudfest2025",
+      "pull_number": 3,
+      "title": "feat: new functionalities",
+      "description": null
+    },
+    "snapshot": null
+  }

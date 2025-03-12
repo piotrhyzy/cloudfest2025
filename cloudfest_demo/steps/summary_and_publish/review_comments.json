@@ -1,0 +1,48 @@
+{
+    "path": "experimental.py",
+    "start_line": 22,
+    "line": 24,
+    "body": "The `if n == node:` condition and the subsequent `pass` statement don't seem to serve any purpose. Consider removing them to simplify the code.\n",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }
+  {
+    "path": "experimental.py",
+    "start_line": 62,
+    "line": 62,
+    "body": "Consider adding a comment to explain the logic behind iterating through the `romanian_map` in reverse order. This isn't immediately obvious.\n",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }
+  {
+    "path": "main.py",
+    "start_line": 7,
+    "line": 8,
+    "body": "Consider adding a comment to explain the purpose of the loop.",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }
+  {
+    "path": "math_utils.py",
+    "start_line": 26,
+    "line": 36,
+    "body": "The `combine_values` function adds `a` and `b` by iterating `a` and `b` times and incrementing `total`. This is inefficient. It can be simplified to a direct addition.\n\nAlso, consider using `0` as a default value instead of `None` to avoid the initial `if` checks.",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }
+  {
+    "path": "math_utils.py",
+    "start_line": 26,
+    "line": 36,
+    "body": "Consider simplifying the logic by directly adding the values after handling the `None` cases.\n\n```suggestion\ndef combine_values(a: int | None, b: int | None) -> int | None:\n    if a is None:\n        return b\n    if b is None:\n        return a\n    return a + b\n```",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }
+  {
+    "path": "string_utils.py",
+    "start_line": 13,
+    "line": 15,
+    "body": "The nested loop structure results in O(n^2) complexity. Consider if this is the intended behavior. If the goal is to repeat the string, a simpler approach would be more efficient.\n\nAlso, the outer loop's variable `_` indicates that the loop variable is intentionally unused. If the intention is to repeat the string `n` times, it would be clearer to directly multiply the string.\n\nIf the logic is not obvious, add a comment explaining the purpose of the nested loops.",
+    "start_side": "RIGHT",
+    "side": "RIGHT"
+  }

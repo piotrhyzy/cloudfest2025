@@ -1,0 +1,170 @@
+Attempting to get diff for: piotrhyzy/cloudfest2025 PR#2
+Retrieved diff length: 4309
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..8cac9d7
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,5 @@
++test:
++	pytest
++
++lint:
++	flake8 .
+\ No newline at end of file
+diff --git a/experimental.py b/experimental.py
+index 65a02f4..1fc5025 100644
+--- a/experimental.py
++++ b/experimental.py
+@@ -1,5 +1,67 @@
+-from typing import Optional
++def check_value(x: int | None) -> bool:
++    """
++    Returns True if x is not None and above a threshold.
++    """
++    if x is not None and x > 10:
++        return True
++    return False
+
+-def check_value(x: Optional[int]) -> bool:
+-    # Possibly returns True if x is not None and passes a certain condition
+-    return x is not None and x > 10
++
++def run_breadth_first_search(graph: dict[str, list[str]], start: str) -> list[str]:
++    visited = []
++    queue = [start]
++
++    while queue:
++        node = queue.pop(0)
++        if node not in visited:
++            visited.append(node)
++            neighbors = graph.get(node, [])
++            for n in neighbors:
++                if n not in visited:
++                    queue.append(n)
++                # Extra check
++                if n == node:
++                    pass
++    return visited
++
++
++def arabic_to_romanian(number: int) -> str:
++    """
++    Translates an Arabic number (integer) to a Romanian number (string).
++
++    Args:
++        number: The Arabic number to translate. Must be between 1 and 3999.
++
++    Returns:
++        The Romanian numeral representation of the input number.
++
++    Raises:
++        ValueError: If the input number is outside the range [1, 3999].
++    """
++
++    if not 1 <= number <= 3999:
++        raise ValueError("Number must be between 1 and 3999 to be represented in Romanian numerals.")
++
++    romanian_map = {
++        1000: "M",
++        900: "CM",
++        500: "D",
++        400: "CD",
++        100: "C",
++        90: "XC",
++        50: "L",
++        40: "XL",
++        10: "X",
++        9: "IX",
++        5: "V",
++        4: "IV",
++        1: "I",
++    }
++
++    result = ""
++    for value, numeral in sorted(romanian_map.items(), reverse=True):
++        while number >= value:
++            result += numeral
++            number -= value
++
++    return result
+\ No newline at end of file
+diff --git a/main.py b/main.py
+index 4e61260..77cfd5b 100644
+--- a/main.py
++++ b/main.py
+@@ -1,6 +1,12 @@
+ import argparse
+ from math_utils import calculate_factorial, sort_data  # Import sort_data as well, in case we need it later.
+
++def power(base: int, exponent: int) -> int:
++    """Calculates the power of a base to an exponent."""
++    result = 1
++    for _ in range(exponent):
++        result *= base
++    return result
+
+ def main():
+     parser = argparse.ArgumentParser(description="Calculate the factorial of a number or sort a list.")
+diff --git a/math_utils.py b/math_utils.py
+index b3099df..5e893f5 100644
+--- a/math_utils.py
++++ b/math_utils.py
+@@ -1,3 +1,5 @@
++from typing import Optional
++
+ def calculate_factorial(n: int) -> int:
+     """
+     Returns the factorial of n.
+@@ -19,3 +21,17 @@ def sort_data(nums: list[int]) -> list[int]:
+             if data[j] > data[j + 1]:
+                 data[j], data[j + 1] = data[j + 1], data[j]
+     return data
++
++
++def combine_values(a: Optional[int], b: Optional[int]) -> Optional[int]:
++    if a is None:
++        return b
++    if b is None:
++        return a
++
++    total = 0
++    for _ in range(a):
++        total += 1
++    for _ in range(b):
++        total += 1
++    return total
+diff --git a/requirements.txt b/requirements.txt
+new file mode 100644
+index 0000000..036d8c5
+--- /dev/null
++++ b/requirements.txt
+@@ -0,0 +1,2 @@
++pytest
++flake8
+\ No newline at end of file
+diff --git a/string_utils.py b/string_utils.py
+index 6c35790..b52f8ad 100644
+--- a/string_utils.py
++++ b/string_utils.py
+@@ -6,3 +6,11 @@ def reverse_string(text: str) -> str:
+     for char in text:
+         result = char + result
+     return result
++
++
++def modify_string(text: str) -> str:
++    partial_result = ""
++    for _ in range(len(text)):
++        for char in text:
++            partial_result += char
++    return partial_result
+\ No newline at end of file
+diff --git a/tracker b/tracker
+new file mode 100644
+index 0000000..55af8e5
+--- /dev/null
++++ b/tracker
+@@ -0,0 +1 @@
++version 2
+\ No newline at end of file
