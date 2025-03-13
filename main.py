@@ -1,6 +1,12 @@
 import argparse
 from math_utils import calculate_factorial, sort_data  # Import sort_data as well, in case we need it later.
 
+def power(base: int, exponent: int) -> int:
+    """Calculates the power of a base to an exponent."""
+    result = 1
+    for _ in range(exponent):
+        result *= base
+    return result
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate the factorial of a number or sort a list.")
